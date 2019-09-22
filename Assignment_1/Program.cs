@@ -223,7 +223,7 @@ namespace Assignment_1
                         }
                         else if (a[i - 1] == b[j - 1])
                         {
-                            //When we find a common chracter , we take the lenght of the previous subarray from the
+                            //When we find a common character , we take the lenght of the previous subarray from the
                             //other row, we can use 1 d array also, then we need to traverse from right to left
                             len[currRow, j] = len[1 - currRow, j - 1] + 1;
                             if (len[currRow, j] > result)
@@ -301,7 +301,7 @@ namespace Assignment_1
                 for (int i = 0; i < 10; i++)
                 {
                     //i am preserving the pool of numbers which are used to genrate all permutations, hence i will create
-                    //a list which will have all the number , i wont use the same for any modifications
+                    //a list which will have all the numbers , i wont use the same for any modifications
                     myList.Add(i);
 
                 }
@@ -348,10 +348,12 @@ namespace Assignment_1
             //I am doing a array simple addition 
             for (int i = str1.Length - 1; i >= 0; i--,index--)
             {
+                //get the number associated with the chracter at str[i] position
                 dict.TryGetValue(str1[i], out a);
                 dict.TryGetValue(str2[i], out b);
                 dict.TryGetValue(str3[index], out c);
                 sum = a + b + carry;
+                //Carry as name suggests will be used in the next iteration for addition of the numbers.
                 carry = sum / 10;
                 comp = sum % 10;
                 
@@ -361,6 +363,7 @@ namespace Assignment_1
                 }
                 else
                 {
+                    //Flag will become false when there is mismatch in added values
                     flag = false;
                     break;
                 }
