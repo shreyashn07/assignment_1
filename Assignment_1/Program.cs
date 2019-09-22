@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-
+//Self Reflection: This assignment as a whole helped me in learning collections and applying logic
+//to solve simple logical problems, i have included my self reflection with each function
 namespace Assignment_1
 {
     class MainClass
