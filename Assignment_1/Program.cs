@@ -16,7 +16,7 @@ namespace Assignment_1
             Console.WriteLine("\n");
 
             int n2 = 7;
-            Console.WriteLine("Series of number when n:{0}",n2);
+            Console.WriteLine("Series of number when n:{0}", n2);
 
             printSeries(n2);
             Console.WriteLine("\n");
@@ -33,8 +33,8 @@ namespace Assignment_1
             Console.WriteLine(r4);
             Console.WriteLine("\n");
 
-            int[] arr1 = new int[] { 1, 2, 5, 6, 7, 8, 9 };
-            int[] arr2 = new int[] { 1, 2, 3, 4, 5 };
+            int[] arr1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int[] arr2 = new int[] { 1, 2, 5, 7, 8, 9, 10 };
             int[] r5 = getLargestCommonSubArray(arr1, arr2);
             Console.Write("arr1: ");
             for (int i = 0; i < arr1.Length; i++)
@@ -192,8 +192,10 @@ namespace Assignment_1
             //if(input1==input2)
             //mat[i][j]=mat[i-1][j-1]+1
             //The previous elements in the diagonal contains the length of the common substring until the last character
-            //i found more optmized solution in the below link, which used an array of 2 rows rather than m rows
+            //i found more optmized solution in the below link, i used this as an reference
             //https://www.geeksforgeeks.org/print-longest-common-substring/
+            //I have modifed the solution according to our needs handling all corner case (if arrays of same lenght is found ,
+            //return the last array)
             //Self Reflection: This helped me to learn about optimization techniques and dynamic programming
             //and space complexity
 
@@ -205,7 +207,7 @@ namespace Assignment_1
             int n = b.Length;
             
 
-            int[,] len = new int[2, m];
+            int[,] len = new int[2, n+m];
             int currRow = 0;
             //We will store the end index of the common substring in a variable which will help us easy traversal in future
             int end = 0;
@@ -227,7 +229,8 @@ namespace Assignment_1
                             //When we find a common character , we take the lenght of the previous subarray from the
                             //other row, we can use 1 d array also, then we need to traverse from right to left
                             len[currRow, j] = len[1 - currRow, j - 1] + 1;
-                            if (len[currRow, j] > result)
+                            //We need >= to handle the corner case of handling common sub arrays of equal lenght
+                            if (len[currRow, j] >= result)
                             {
                                 //if the lenght of the subarray is bigger than the previously found, we store the result and
                                 //we change the end pointer position
@@ -237,6 +240,7 @@ namespace Assignment_1
                         }
                         else
                         {
+                            
                             len[currRow, j] = 0;
                         }
                     }
@@ -246,10 +250,11 @@ namespace Assignment_1
                 }
                 if (result == 0)
                     return null;
-                int[] resp = new int[result - (end - result + 1)];
+                //Response should be as big as the result
+                int[] resp = new int[result];
                 //to print the common sub array , we will start the loop from i =end pointer minus the maxlength which gives
                 //us the starting index in the array.
-                for (int i = end - result + 1, index = 0; i < result; i++, index++)
+                for (int i = end - result + 1, index = 0; index < result; i++, index++)
                 {
                     resp[index] = a[i];
 
@@ -262,8 +267,8 @@ namespace Assignment_1
             {
                 Console.WriteLine(e.Message);
             }
-
-            return null; // return the actual array
+            return null;
+            
         }
 
 
