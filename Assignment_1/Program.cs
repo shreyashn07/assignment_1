@@ -10,45 +10,45 @@ namespace Assignment_1
     {
         static void Main(string[] args)
         {
-            int a = 1, b = 22;
-            Console.WriteLine("Self Dividing numbers are:");
-            printSelfDividingNumbers(a, b);
-            Console.WriteLine("\n");
+            //int a = 1, b = 22;
+            //Console.WriteLine("Self Dividing numbers are:");
+            //printSelfDividingNumbers(a, b);
+            //Console.WriteLine("\n");
 
-            int n2 = 7;
-            Console.WriteLine("Series of number when n:{0}", n2);
+            //int n2 = 7;
+            //Console.WriteLine("Series of number when n:{0}", n2);
 
-            printSeries(n2);
-            Console.WriteLine("\n");
+            //printSeries(n2);
+            //Console.WriteLine("\n");
 
 
-            int n3 = 5;
-            printTriangle(n3);
-            Console.WriteLine("\n");
+            //int n3 = 5;
+            //printTriangle(n3);
+            //Console.WriteLine("\n");
 
-            int[] J = new int[] { 1, 3 };
-            int[] S = new int[] { 1, 3, 3, 2, 2, 2, 2, 2 };
-            int r4 = numJewelsInStones(J, S);
-            Console.WriteLine("Number of Jewels:");
-            Console.WriteLine(r4);
-            Console.WriteLine("\n");
+            //int[] J = new int[] { 1, 3 };
+            //int[] S = new int[] { 1, 3, 3, 2, 2, 2, 2, 2 };
+            //int r4 = numJewelsInStones(J, S);
+            //Console.WriteLine("Number of Jewels:");
+            //Console.WriteLine(r4);
+            //Console.WriteLine("\n");
 
-            int[] arr1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            int[] arr2 = new int[] { 1, 2, 5, 7, 8, 9, 10 };
-            int[] r5 = getLargestCommonSubArray(arr1, arr2);
-            Console.Write("arr1: ");
-            for (int i = 0; i < arr1.Length; i++)
-            {
-                Console.Write(arr1[i]);
-            }
-            Console.Write("\n");
-            Console.Write("arr2: ");
-            for (int i = 0; i < arr2.Length; i++)
-            {
-                Console.Write(arr2[i]);
-            }
-            Console.Write("\n");
-            displayArray(r5);
+            //int[] arr1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //int[] arr2 = new int[] { 1, 2, 5, 7, 8, 9, 10 };
+            //int[] r5 = getLargestCommonSubArray(arr1, arr2);
+            //Console.Write("arr1: ");
+            //for (int i = 0; i < arr1.Length; i++)
+            //{
+            //    Console.Write(arr1[i]);
+            //}
+            //Console.Write("\n");
+            //Console.Write("arr2: ");
+            //for (int i = 0; i < arr2.Length; i++)
+            //{
+            //    Console.Write(arr2[i]);
+            //}
+            //Console.Write("\n");
+            //displayArray(r5);
             //Solve puzzle with backtracking
             solvePuzzle();
 
@@ -304,7 +304,7 @@ namespace Assignment_1
 
                 int k = unique.Count;
                 List<int> myList = new List<int>();
-                for (int i = 0; i < 9; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     //i am preserving the pool of numbers which are used to genrate all permutations, hence i will create
                     //a list which will have all the numbers , i wont use the same for any modifications
@@ -315,7 +315,7 @@ namespace Assignment_1
                 //I am using 0 to 10 for program to run light, we can go until 20 , which gives solution to more
                 //problems ,if the program doesnt work for any string , we just need to increase the pool numbers for it
                 //work efficiently
-                for (int j = 0; j < 9; j++)
+                for (int j = 0; j < 10; j++)
                 {
                     //a would be the list which will be used to generate all permutations
                     a.Add(myList[j]);
